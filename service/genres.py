@@ -34,10 +34,10 @@ class GenresService():
         self.db.commit()
         return
     
-    def delete_genres(self, id:int, data:Genres):
-        self.db.delete(data)
+    def delete_genres(self, id:int):
+        self.db.query(GenresModel).filter(GenresModel.id == id).delete()
         self.db.commit()
-        
+        return
 
 
 

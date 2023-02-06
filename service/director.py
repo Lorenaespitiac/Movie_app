@@ -7,11 +7,11 @@ class DirectorService():
         self.db = db
         
     def get_director(self):
-        result= self.db.session.query(DirectorModel).all()
+        result= self.db.query(DirectorModel).all()
         return result
         
-    def get_director(self, id:int):
-        result= self.db.query(DirectorModel).filter(DirectorModel.id==id).first()
+    def get_director_by_id(self, id:int):
+        result= self.db.query(DirectorModel).filter(DirectorModel.id == id).first()
         return result
 
     def get_director_by_fname(self, fname:str):
